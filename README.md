@@ -1,5 +1,5 @@
 # batchExport
-""" 
+
 Authors: Py (adapted by TB to work with unix and legacy files) 
 Date: March 2019
 
@@ -17,5 +17,3 @@ IMPORTANT: I had to comment out line 26 in "update_methods.py" (from video_captu
 to avoid having to install pyuvc (this caused problems when installing, and isn't needed for this script to work)
 
 To do: figure out how to export surface gaze data (currently only exports annotations and pupil data)
-
-'"""
