@@ -31,6 +31,7 @@ IMPORTANT: I had to comment out line 26 in "update_methods.py" [from video_captu
 to avoid having to install pyuvc (this caused problems when installing, and isn't needed for this batch export script to work)
 
 
-## TO DO:
+## TO DO
 
 Figure out how to export surface gaze data (currently only exports annotations and pupil data)
+ 
