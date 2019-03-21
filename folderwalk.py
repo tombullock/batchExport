@@ -9,9 +9,11 @@ Export data to .csv files
 
 Notes: 
 Runs in python 3.x
-Needs packages like numpy, av etc.
-Needs msgpack 0.5.6 (latest version [6] breaks the export)
-Needs files from pupil/pupil_src/shared modules (git clone https://github.com/pupil-labs/pupil)
+Needs numpy, scipy
+Needs av: conda install -c conda-forge av
+Needs cv: conda install-c conda-forge opencv
+Needs msgpack 0.5.6 (latest version [6] breaks the export): conda install -c anaconda msgpack-python=0.5.6  # possibly anaconda3? 
+Needs modules from pupil/pupil_src/shared modules (git clone https://github.com/pupil-labs/pupil)
 IMPORTANT: I had to comment out line 26 in "update_methods.py" (from video_capture.utils import RenameSet) 
 to avoid having to install pyuvc (this caused problems when installing, and isn't needed for this script to work)
 
@@ -20,9 +22,9 @@ To do: figure out how to export surface gaze data (currently only exports annota
 '"""
 
 # set paths
-pupilSourcePath = "/Users/tombullock/Documents/Psychology/BOSS/pupil/pupil_src/shared_modules" # location of pupil src files
-recording_path = ['/Users/tombullock/Documents/Psychology/BOSS/PUPIL_TEST_EXPORT'] # recordings you want to export
-out_dir = '/Users/tombullock/Documents/Psychology/BOSS/PUPIL_TEST_EXPORTED' # exported .csv files destination folder
+pupilSourcePath = '/data/DATA_ANALYSIS/BOSS_PREPROCESSING/EYE/pupil/pupil_src/shared_modules' # location of pupil_src files
+recording_path = ['/data/DATA_ANALYSIS/BOSS_PREPROCESSING/EYE/Pupil_Labs_For_Export'] # recordings you want to export
+out_dir = '/data/DATA_ANALYSIS/BOSS_PREPROCESSING/EYE/Pupil_Labs_Exported' # exported .csv files destination folder
 
 # export annotations
 annotations = True
@@ -32,7 +34,7 @@ import os
 import extract_diameter
 import sys
 sys.path.insert(0,pupilSourcePath)
-import update_methods
+from update_methods import *
 
 recording_valid = []
 csv_out = []
@@ -49,7 +51,11 @@ for pa in recording_path:
     
         # Find all dates where there was a recording
         recording_sessions = os.listdir(folder)
-
+        
+        # edit for unix compatibility
+        if '.DS_Store' in recording_sessions:
+            recording_sessions.remove('.DS_Store')
+        
         for se in recording_sessions:
             # Find all recordings for each day
             session = os.path.join(folder, se)
