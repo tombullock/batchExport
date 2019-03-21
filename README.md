@@ -1,4 +1,4 @@
-# batchExport
+# batchExportPupilLabs
 
 Authors: Py (adapted by TB to work with unix and legacy files) 
 Date: March 2019
