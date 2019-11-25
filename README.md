@@ -1,7 +1,7 @@
 # batchExportPupilLabs
 
 Authors: Py (adapted by TB to work with unix and legacy files) 
-Date: March 2019
+Date: March 2019 (Updated Nov 2019)
 
 ## Purpose
 
@@ -33,5 +33,7 @@ to avoid having to install pyuvc (this caused problems when installing, and isn'
 
 ## TO DO
 
-Figure out how to export surface gaze data (currently only exports annotations and pupil data)
+Figure out how to export surface gaze data (currently only exports annotations and pupil data)!!!
+
+^^^This is a work in progress - see new folder ^^^
  
