@@ -30,6 +30,8 @@ Needs modules from pupil/pupil_src/shared modules (git clone https://github.com/
 IMPORTANT: I had to comment out line 26 in "update_methods.py" [from video_capture.utils import RenameSet]
 to avoid having to install pyuvc (this caused problems when installing, and isn't needed for this batch export script to work)
 
+IMPORTANT: Updated Nov 2019 - these scripts won't work with the newest version of pupil_src
+
 
 ## TO DO
 
