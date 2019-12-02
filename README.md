@@ -1,25 +1,27 @@
 # batchExportPupilLabs
 
-Authors: Py (adapted by TB to work with unix and legacy files) 
-Date: March 2019
+Original Authors: Py and Papr (adapted, badly, by TB )
+Date: 12.01.19
 
-!!!!NEEDS UPDATING!!!
+Disclamer: This repo is a mess, but the scripts do work.  I will eventually clean it up.
 
 ## Purpose
 
-Loop through recordings in a specified directory
-Update to latest version of recording format (if recorded in legacy format)
-Export data to .csv files 
+Loop through recordings in a specifed directory
+Update recording format if recorded in legacy format
+Export data to .csv files in a specified directory
 
 ## Instructions
 
-Edit the directory paths in `folderwalk.py` and run
+Edit the directory paths in `Batch_Export.py` and run
 
 ## Notes
 
+Requires modules from an older version of pupil_src (see pupil folder included in this repo)
+
 Runs in python 3.x
 
-Needs numpy, scipy
+Needs numpy, scipy, pandas, shutil, os, sys, etc.
 
 Needs av: conda install -c conda-forge av
 
@@ -32,8 +34,4 @@ Needs modules from pupil/pupil_src/shared modules (git clone https://github.com/
 IMPORTANT: I had to comment out line 26 in "update_methods.py" [from video_capture.utils import RenameSet]
 to avoid having to install pyuvc (this caused problems when installing, and isn't needed for this batch export script to work)
 
-
-## TO DO
-
-Figure out how to export surface gaze data (currently only exports annotations and pupil data)
 
