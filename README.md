@@ -1,7 +1,9 @@
 # batchExportPupilLabs
 
 Authors: Py (adapted by TB to work with unix and legacy files) 
-Date: March 2019 (Updated Nov 2019)
+Date: March 2019
+
+!!!!NEEDS UPDATING!!!
 
 ## Purpose
 
@@ -30,12 +32,8 @@ Needs modules from pupil/pupil_src/shared modules (git clone https://github.com/
 IMPORTANT: I had to comment out line 26 in "update_methods.py" [from video_capture.utils import RenameSet]
 to avoid having to install pyuvc (this caused problems when installing, and isn't needed for this batch export script to work)
 
-IMPORTANT: Updated Nov 2019 - these scripts won't work with the newest version of pupil_src
-
 
 ## TO DO
 
-Figure out how to export surface gaze data (currently only exports annotations and pupil data)!!!
+Figure out how to export surface gaze data (currently only exports annotations and pupil data)
 
-^^^This is a work in progress - see new folder ^^^
- 
